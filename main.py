@@ -65,6 +65,7 @@ db=firestore.client()
 #                     if len(new_arr)>=n:
 #                         decreasing.append(new_arr)
 #                     new_arr = [new_arr[-1],{elem:year_net_profit_dict[elem]}]
+
 #             else:
 #                 # Increasing
 #                 if new_arr[-1][list(new_arr[-1].keys())[0]] <= year_net_profit_dict[elem]:
