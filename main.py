@@ -29,13 +29,13 @@ db=firestore.client()
 
 
 
-chrome_driver_path="/Users/ujjwalpatel/Desktop/chromedriver/chromedriver"
+# chrome_driver_path="/Users/ujjwalpatel/Desktop/chromedriver/chromedriver"
 
 
 
 
 
-chr_options = Options()
+chr_options = webdriver.ChromeOptions()
 chr_options.add_argument('--headless=new')
 
 
