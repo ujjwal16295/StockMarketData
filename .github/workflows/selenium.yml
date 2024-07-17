@@ -43,4 +43,4 @@ jobs:
         TYPE: ${{ secrets.TYPE }}
         UNIVERSE_DOMAIN: ${{ secrets.UNIVERSE_DOMAIN }}
       run: |
-        python main.py
+        python main.py || (find . -type f -name "*.png" -exec echo "Screenshot:" \; -exec cat {} \;)
