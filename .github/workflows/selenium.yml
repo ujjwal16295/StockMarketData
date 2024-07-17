@@ -43,4 +43,12 @@ jobs:
         TYPE: ${{ secrets.TYPE }}
         UNIVERSE_DOMAIN: ${{ secrets.UNIVERSE_DOMAIN }}
       run: |
-        python main.py || (find . -type f -name "*.png" -exec echo "Screenshot:" \; -exec cat {} \;)
+        python main.py
+      continue-on-error: true
+
+    - name: Upload Screenshots
+      if: failure()
+      uses: actions/upload-artifact@v2
+      with:
+        name: error-screenshots
+        path: '*.png'
