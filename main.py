@@ -8,20 +8,21 @@ import time
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
+import os
 
 
 firebase_config={
-  "type": "service_account",
-  "project_id": "stockmarket-61d33",
-  "private_key_id": "9d5c58989b3e4f20b554156f5e1d934f0aa576aa",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDRhpD2tP6DXx5+\nRtnaJfIo9WcLz7Tue/+SYz2Li9wPoOchvOdMj8rqqrewet1xBuGCIrN2CxLDTXZd\nacbGVc4YtwxQy2nAfXQnkvLqKhFvMqDAxeMLoa7E0SrAiof5/u2De99e59+juR2P\n6+PfGCoJMBdGnuU3M21JtqTs8sUKSOUKZHUJTMZzLAn2eURPkHcKcmbtaW9mL3kj\n621DkQKCN+QRm9Jh8KJ2YjSLXdy3sGwnAxCXts6XZYyNGoxBSalDBqIphbII2UBm\nMnx8OICvEMGLCNBwA8VITV4PuNML5fgCjg4e2WN92aDcOW31eAAqPBPbhq3+MCrB\nGgk/fRi/AgMBAAECggEAASbsVP1G4YbdZaTDdyA4Ww6tRF7gNCXUvJnNBVAGYYaD\npozfjn7mqj24Z7ygyzXR2scMRkAopX5CyLGrcCADjOoiiVajVH5yKc+/cnQ7GxF8\nIGB2Kw7TNz96fDdugO8dJJbCzuV4dCbC1JMh4JWZFZJUz4kCMcXIM7TeAO/MyQBf\nDfP44Y6tw3P7eTR32MnZy3w23LHJWJRzmuxmM/t2r2hPE9LL8RmPpsPo8YuyIqTm\nHOxu5JhNWK5pzT2rktdKpAZdsY30UZZYDGksv6MzV4LMQI89+qGYo6vUrgoOjDu7\ndpJ9w2tMc5Uq6zA9YYsDDXRiABRgjO2xMBml61IQoQKBgQD0GdyXCUOogQqIBnvc\naPrw1nr8HKOmRiy4dW5rEfkYA5+O2Y5e40s0o4s8xtU/ZU0iNAqPb3f2B4RIrUqF\nu+WQnOtiVI9Cdne11bY2fW0LLUxA0LIBfL9EMxrhCEA5VuPfdmg5dxjCCDyvx/rG\nmSqxKtWAsxn399tvGSB+Lt7N2QKBgQDbvTz/dIQWZ6evJkTgqcA5wJODpbwnYGMk\nSrsePe6aswxzNUBT92FtyaVxz0AVUIa2pg1cHxE5XSUGe+UBNZmf0oQN3T960sep\nPPYiPVlKU5zjE6x2HSqQpQ5f3xDNrkr4riJCtpQWhRJ3ztQTmSs5y1PzsWRgCp3/\nBm57I6PEVwKBgCZxIDVFBzu1PsRXSRBYFBTzoiCsHfWknYxbKg2AohrvDyS/DFXT\nM9fRXa8vnQvD11bonTUjl9/OJT4Q1GilQ6z3mXY93OXZpFallnGUZSTaeGTIuQ/U\n5oZGChigZQTiszZQ/m72W5bLF0uTkeHO41NNbJw9GHzdstgXO+/DT+FZAoGAXIpF\ntg+L0SO2Kr0jJLpYifngJgEWTD77gb03MHVEl0HwbFRw0uvLzECvvE5b3p4bHbCw\nz6sFxfLENQbYWroICJbPpkcXBNLf4xYZUjIj+HleCQOwDc4aru/ULevzV6ufRzuO\nkinyE8nXDT29csN+wMgwguCiNRBDmbNLs/A+d+ECgYANIN0YBchlOuv0ibo/OPVm\nCf3+fbKFja62SJWvZ+8/BpGkbEZqT8++Ie6aQOoYLus+nfbts8oh6EkaO4u8F2IN\nEhtJuk8rfSelPCDTVjjBfDaQoJL0mraLsBuVaAOm+8NUJMoiUvsmZIowX8X5X7pN\nlcyEIqLhi85kljDEI7ddyg==\n-----END PRIVATE KEY-----\n",
-  "client_email": "firebase-adminsdk-j9050@stockmarket-61d33.iam.gserviceaccount.com",
-  "client_id": "114547067395647550109",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-j9050%40stockmarket-61d33.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
+  "type": os.getenv("TYPE"),
+  "project_id": os.getenv("PROJECT_ID"),
+  "private_key_id": os.getenv("PRIVATE_KEY_ID"),
+  "private_key": os.getenv("PRIVATE_KEY"),
+  "client_email":os.getenv("CLIENT_EMAIL"),
+  "client_id": os.getenv("CLIENT_ID"),
+  "auth_uri": os.getenv("AUTH_URI"),
+  "token_uri": os.getenv("TOKEN_URI"),
+  "auth_provider_x509_cert_url": os.getenv("AUTH_PROVIDER_X509_CERT_URL"),
+  "client_x509_cert_url": os.getenv("CLIENT_X509_CERT_URL"),
+  "universe_domain": os.getenv("UNIVERSE_DOMAIN"),
 }
 cred = credentials.Certificate(firebasse_config)
 firebase_admin.initialize_app(cred)
@@ -33,19 +34,13 @@ db=firestore.client()
 
 
 
+selenium_host = os.getenv('SELENIUM_HOST', 'http://localhost:4444/wd/hub')
+driver = webdriver.Remote(
+    command_executor=selenium_host,
+    desired_capabilities=webdriver.DesiredCapabilities.CHROME
+)
 
 
-chr_options = webdriver.ChromeOptions()
-chr_options.add_argument('--headless=new')
-
-
-
-chr_options.add_experimental_option("detach", True)
-
-
-service = Service(chrome_driver_path)
-
-driver = webdriver.Chrome(service=service,options=chr_options)
 
 
 
