@@ -34,11 +34,20 @@ db=firestore.client()
 
 
 
+# Set up Selenium WebDriver
 selenium_host = os.getenv('SELENIUM_HOST', 'http://localhost:4444/wd/hub')
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+
+# Use Remote WebDriver with Chrome options
 driver = webdriver.Remote(
     command_executor=selenium_host,
-    desired_capabilities=webdriver.DesiredCapabilities.CHROME
+    options=chrome_options,
+    desired_capabilities=DesiredCapabilities.CHROME
 )
+
 
 
 
