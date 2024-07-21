@@ -39,6 +39,9 @@ chrome_driver_path='./chromedriver'
 
 chr_options = Options()
 chr_options.add_argument('--headless=new')
+chr_options.add_argument('--no-sandbox')
+chr_options.add_argument('--disable-dev-shm-usage')
+chr_options.add_argument('--window-size=1920,1080') 
 
 
 
