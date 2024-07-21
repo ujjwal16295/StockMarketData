@@ -24,6 +24,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install selenium
+        pip install firebase-admin
 
     - name: Set executable permission for chromedriver
       run: chmod +x ./chromedriver
