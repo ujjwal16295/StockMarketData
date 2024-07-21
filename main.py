@@ -11,6 +11,19 @@ from firebase_admin import firestore
 import os
 
 # add firebase config here
+firebase_config={
+  "type": "service_account",
+  "project_id": "stockmarket-61d33",
+  "private_key_id": "3116102d2ea6582905fefd96e57a18c42ea71988",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCSa9r83hFP2uNx\nyVxcXQGV4k7voM7rB3jsPnVoVYf/cIYrVCRKEywhbP6W/liHhYqT8tnWbbZyDfEc\noP4esNbjSwchSW9bLkPKsHK2Rn4831PgnWMUtgpWveyTlhuj4SdR2cW4zsgGMhR1\nmnqLpDki/YZpRN/nrh6s7q0zG8kIFT8YDg8VuuwCy9WHCMvhsou1AzcUHYGRCCLE\nE6fyKKXuhp3B8uf9clkAjv7kK12Q5NnY9u9AuxV6YsETC4Qm8RlQplk4mqAydkxE\ng4w3xhH6LVCNZulcSejprLN1oXavelC/354K/bc4s4eN6wgrHCpvy0VU5IaONd2F\nIbZKF3+RAgMBAAECggEADzZC4lYM7OO0ERCHNrZX8ZM5ObaWgL7+PmcPyhbmwfBW\nFB7SBVsgENnyykui9XN3jf7jSF6OH6PYqq2EMTqUnLkhBMGNHuc71k1GIa9JsrfO\nDk4zqsVt5gylzUCBXyGHdP6/xr8+8zvVOdGijSry37KAuiOUcoy5taQ3XNG0bVEl\nhcbz+giMQER/DKlhdezIHAekNlGe/a0pmU0AdIidlSsIMW64azCrI434xXOU8ZIt\nO0nTemlsjNURyEd7gmvWNVUOtW+l2W3DAf9I04D2wA5+7UIMk36dKWkYTAHDApuM\nNUnxoRpd2ir9F+EDJvS1p22yHtfHa+kQNLLBumW2VQKBgQDHReNUnF8A8qAOvpbb\nGuLEGLSey+Mqy53MqG/joBNyLRzOZWw5jbxbw+CHqUwizIm2bgUvBvRncSPc+UH9\nbQ/G75h1CuLB5OGxOz3JdpTnHSlSZ/20lO6m1LBFVneXsA+5IKDkE3eufSOj9K1E\nqAEAPQpOFcPxQn2I51et73UWRQKBgQC8GmBHN0AQ0bXWGTgUum68eqMp+n+3NcEk\nMA1Qx1AWM6JANxco76y6QYl3PgRaUOLNQv5a73ASnMJ0MacExRchSaYDl6+kb5DF\n3sP+3TYCE9DZiy6dZ6HrQZ2NLw5ixGcv5yDDa9Np87/3y0f4eJfUGftdNnbtkgLn\nNCqgXBWO3QKBgHBzgOjDYV1QjYAkj07Pqj4Mzwh5eBUzWDYgqxthvveEe6gBVgRY\ndn22WKNVpzBQCjqXdXdnTk59a0aMpm+Ttv6FQJxz6yiNt8ri6mgg8cBGFYZ6RpI8\nJTyh82L9e3lvEkBfKEvsrHIcDhu8vHZs9DulNoaAA9XGtr6mBjWSVpmdAoGAHB/5\ne0x4iMtCW/PDXd4ORqIzmUg6JmOkMEv7AbP7doZb4Swbi2RiuCqqaijcr8BeWQCG\nVYRthmrn7EWsSltJvRFtACaC/Zws0lkfhxD+TUs3M//KhYCERk+2RfDePshNAW2W\niYGqx7HJZzx+01j8opsL6YEGQTlOs9Ep+nYqRwUCgYBBfbZW7F2hL94FWL+xVBPv\nk83++OHBucIq8clb1BRS8MRHTv7s01ZGTOY+kTdyzNHhFJc5K8DYNgV2f+PA/6ey\nyGorbCxD7KpOVixdi8AG2ZxwTxRqjTpfe2J6f7SmeaY0T9PhkqCUkxr5oNDe5ldz\nynHFTN8z53aYFhXSn+29+w==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-j9050@stockmarket-61d33.iam.gserviceaccount.com",
+  "client_id": "114547067395647550109",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-j9050%40stockmarket-61d33.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
 
 cred = credentials.Certificate(firebase_config)
 firebase_admin.initialize_app(cred)
