@@ -31,16 +31,23 @@ db=firestore.client()
 
 
 
-# chrome_driver_path="/Users/ujjwalpatel/Desktop/chromedriver/chromedriver"
+chrome_driver_path="./chromedriver"
 
 
 
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument('--headless=new')
-# chrome_options.add_argument("--no-sandbox")
-# chrome_options.add_argument("--headless")
-# chrome_options.add_argument("--disable-gpu")
-driver = webdriver.Chrome(options=chrome_options)
+
+
+chr_options = Options()
+chr_options.add_argument('--headless=new')
+
+
+
+chr_options.add_experimental_option("detach", True)
+
+
+service = Service(chrome_driver_path)
+
+driver = webdriver.Chrome(service=service,options=chr_options)
 
 
 
