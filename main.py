@@ -31,7 +31,7 @@ db=firestore.client()
 
 
 
-chrome_driver_path="./chromedriver"
+chrome_driver_path='./chromedriver'
 
 
 
