@@ -163,7 +163,7 @@ for index,i in enumerate(newlist):
     print(i)
     search = driver.find_element(By.XPATH, "/html/body/main/div[2]/div/div/div/input")
     search.send_keys(i)
-    time.sleep(10)
+    time.sleep(3)
     search.send_keys(Keys.ENTER)
 
     # getting all csg and cp
@@ -243,10 +243,10 @@ for index,i in enumerate(newlist):
            cp3=0
 
     # median pe ratio
-    time.sleep(10)
+    time.sleep(1)
     pe_ratio_button=driver.find_element(By.XPATH,"/html/body/main/section[1]/div[1]/div[2]/div/button[2]")
     pe_ratio_button.click()
-    time.sleep(10)
+    time.sleep(1)
     median_pe = driver.find_element(By.XPATH,"/html/body/main/section[1]/div[3]/label[2]/span").text
     if((median_pe.replace('Median PE =', '')).replace(" ", "")!="None"):
         median_pe_val=float((median_pe.replace('Median PE =', '')).replace(" ", ""))
@@ -470,7 +470,7 @@ for index,i in enumerate(newlist):
     growth_amount = 0.0
 
     driver.get("https://www.screener.in/")
-    time.sleep(10)
+    time.sleep(3)
 
 driver.close()
 
