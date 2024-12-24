@@ -411,8 +411,13 @@ for index,i in enumerate(newlist):
     lowest_diff_percentage=((current_price-lowest_price)/lowest_price)*100
     print(i)
     
+   
     # sharholder
-    shares = driver.find_element(By.XPATH,"/html/body/main/section[9]/div[2]/div/table/tbody/tr[7]").find_elements(By.TAG_NAME,"td")
+    try:
+        shares = driver.find_element(By.XPATH, "/html/body/main/section[9]/div[2]/div/table/tbody/tr[7]").find_elements(By.TAG_NAME, "td")
+    except:
+        shares = driver.find_element(By.XPATH, "/html/body/main/section[9]/div[2]/div/table/tbody/tr[6]").find_elements(    By.TAG_NAME, "td")
+
     for share in shares:
         share_list.append(share.text)
     # sector and industry
