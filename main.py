@@ -440,14 +440,26 @@ for index,i in enumerate(newlist):
     year_fcf = driver.find_element(By.XPATH,"/html/body/main/section[7]/div[2]/table/thead/tr").find_elements(By.TAG_NAME,"th")
     for fcf in year_fcf[1:]:
         year_fcf_list.append(fcf.text)
+   
     cash_from_operating_activity = driver.find_element(By.XPATH,"/html/body/main/section[7]/div[2]/table/tbody/tr[1]").find_elements(By.TAG_NAME,"td")
     for op  in cash_from_operating_activity[1:]:
-        cash_from_operating_activity_list.append(op.text)
+        if op.text=="":
+            cash_from_operating_activity_list.append('0')
+        else:
+            cash_from_operating_activity_list.append(op.text)
+    print("cash_from_operating_list")
+    print(cash_from_operating_activity_list)
 
     capexs = driver.find_element(By.XPATH,"/html/body/main/section[7]/div[2]/table/tbody/tr[3]").find_elements(By.TAG_NAME,"td")
     for capex in capexs[1:]:
-        capex_list.append(capex.text)  
-    
+        if capex.text=="":
+            capex_list.append('0')
+        else:
+            capex_list.append(capex.text)
+    print("capex_list")
+    print(capex_list)
+
+
    
     for capex_index,item_of_list in enumerate(capex_list):
         if "," in cash_from_operating_activity_list[capex_index]:
