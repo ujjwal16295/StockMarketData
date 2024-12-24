@@ -64,9 +64,14 @@ year_profit_list ={}
 buy_or_not=""
 growth_time=""
 count = 1
+year_fcf_list = []
+capex_list = []
+cash_from_operating_activity_list = []
+free_cash_flow_list = {}
 
 year_net_profit_dict={}
 growth_amount=0.0
+
 
 def growth(cuurent,previous):
     if cuurent>0 and previous>0:
@@ -405,6 +410,40 @@ for index,i in enumerate(newlist):
     # diff from lowest price
     lowest_diff_percentage=((current_price-lowest_price)/lowest_price)*100
     print(i)
+    # sector and industry
+
+    sector= driver.find_element(By.XPATH,"/html/body/main/section[3]/div[1]/div[1]/p[1]/a[1]").text
+    industry = driver.find_element(By.XPATH,"/html/body/main/section[3]/div[1]/div[1]/p[1]/a[2]").text
+  
+    # free cash flow
+    cash_from_operating_activity_button = driver.find_element(By.XPATH,"/html/body/main/section[7]/div[2]/table/tbody/tr[1]/td[1]/button")
+    cash_from_investing_activity_button=driver.find_element(By.XPATH,"/html/body/main/section[7]/div[2]/table/tbody/tr[2]/td[1]/button")
+
+    cash_from_investing_activity_button.click()
+    time.sleep(1)
+    year_fcf = driver.find_element(By.XPATH,"/html/body/main/section[7]/div[2]/table/thead/tr").find_elements(By.TAG_NAME,"th")
+    for fcf in year_fcf[1:]:
+        year_fcf_list.append(fcf.text)
+    cash_from_operating_activity = driver.find_element(By.XPATH,"/html/body/main/section[7]/div[2]/table/tbody/tr[1]").find_elements(By.TAG_NAME,"td")
+    for op  in cash_from_operating_activity[1:]:
+        cash_from_operating_activity_list.append(op.text)
+
+    capexs = driver.find_element(By.XPATH,"/html/body/main/section[7]/div[2]/table/tbody/tr[3]").find_elements(By.TAG_NAME,"td")
+    for capex in capexs[1:]:
+        capex_list.append(capex.text)  
+    
+    for index,item_of_list in enumerate(capex_list):
+        if "," in cash_from_operating_activity_list[index]:
+            new_cash_op = float(cash_from_operating_activity_list[index].replace(",", ""))
+        else:
+            new_cash_op = float(cash_from_operating_activity[index])
+        if "," in capex_list[index]:
+            new_capex = float(capex_list[index].replace(",",""))
+        else:
+            new_capex = float(capex_list[index])
+
+        free_cash_flow_list[year_fcf_list[index]] = new_cash_op-new_capex
+  
 
     jsonObject = {
         "name":i,
@@ -430,6 +469,9 @@ for index,i in enumerate(newlist):
         "pttm":p_ttm,
         "sttm":s_ttm,
         "growthrate":year_profit_list["growth"],
+        "sector":sector,
+        "industry":industry,
+        "free_cash_flow":free_cash_flow_list
     }
 
     if index<=99:
@@ -468,6 +510,11 @@ for index,i in enumerate(newlist):
     count=1
     year_net_profit_dict = {}
     growth_amount = 0.0
+    year_fcf_list = []
+    capex_list = []
+    cash_from_operating_activity_list = []
+    free_cash_flow_list = {}
+
 
     driver.get("https://www.screener.in/")
     time.sleep(3)
