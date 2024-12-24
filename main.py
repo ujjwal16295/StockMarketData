@@ -419,7 +419,13 @@ for index,i in enumerate(newlist):
         shares = driver.find_element(By.XPATH, "/html/body/main/section[9]/div[2]/div/table/tbody/tr[6]").find_elements(    By.TAG_NAME, "td")
 
     for share in shares:
-        share_list.append(share.text)
+        if "," in share.text:
+            new_share = float(share.text.replace(",",""))
+        else:
+            new_share = float(share.text)
+            
+        share_list.append(new_share)
+
     # sector and industry
 
     sector= driver.find_element(By.XPATH,"/html/body/main/section[3]/div[1]/div[1]/p[1]/a[1]").text
