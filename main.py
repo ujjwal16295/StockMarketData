@@ -13,18 +13,17 @@ import os
 # add firebase config here
 firebase_config={
   "type": "service_account",
-  "project_id": "project-fb5a8",
-  "private_key_id": "c4015f0d32fa8e495977c556599ede237f2f94e4",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCnXjADu/wz+mlL\npoeHHONyZenPhCjueRRjV7/yNIomScmgzwh+5cHAIxALhCYswfrbcWeiLn9SffG3\nAfYEd1pLb1uO20NOzR7BdWej2KbkJ+zV304toc8c9m0VYfpKBFSOHhQUCDZhBZ0G\nUqEJrIkDK1p64H6a/W7FhUS2t1YjBOckoUktw6OAQinT320A12asn2VJrAxELJ5O\nmv0HBZWLc2WdrKtsXyjAFbHGugh2Ohpyf8uHfS1OU+Hwwhrp3l2PMoCpbKMG6P3V\nbly0XJ3CmpkkFHrGKADclGMwPp2+wmuBHioI4D2quDOf40yMlMUFvKvZ0Lr4jv+/\n1B5OzbJFAgMBAAECggEABPHFSACs5Hc21sUe/++ZAmvsjguNXLlVEBxmtk6sZyP0\nH59PS7FG3krtK1A2cO3X+3nchE2oI1eihUGonDOGT4uOG6QN10+XNdVmxKtsdVUj\nVRCYT7JM3519XwAF9iSbrZcAiKJAwwLK+nNgQHfgOQ1ISnmEbkZjfMKzrF4NHrct\n2U8iTErDSdCG2lY013Cpd8gHO4YRbux+7az6bPkbUuUucMSO4EyHnxm7rGjf6IVr\nZKzExhYLDxZY4LutJ/KCfJ+Yv1oLnLmW3A6QUjMDR9vkkhZ/E4//qECgLky+pkX7\nsqL09C56UcV0CTwW/9iCOmSw2blEt5dLIP5uE99xAQKBgQDfZgBLfNPjzL6cuoxN\noq80ryYkpWvP/CIQVmq/ChfEPVBoXPdxOgU/9tb8etyeVqTvz7XXBZfV9NrJdCEc\n9a46r+DJ2wY6WVjU/SPrJaJDNzHcPyxIQF1/HlMsSE1cMRyYLQkkgmPtdAmlTqKV\nW6W39EywQp4kNXkX5gxv9+INAQKBgQC/yu2QGfFWzKzQ5V8mdc98LhhHSdc6Fix9\nVXOq8T8YncIs/Nbg0pmwi5m8kF/NV84vceMW1YOW7C7vzGU0HvzibbVybzA03ffg\nz4bkDqEmFS2HmKNORvSuTD6xMKqCO2t9evRWC7EHMpu2DKsjogM9Dzz1klFkCiZf\nHdp8M2MxRQKBgQCuSstyGbrLIMOaTeUG8SUWyovMzY7W3xTIgFOaJsqyHVAtjFK1\ncRoFdJT4uPaFRn46Z2iskL2MfRNxVvw6tucu/Gc5tXsfbPPkgHdUj7EQFfD9r//h\ngu4vLj6f7u0EP4DarVBTvrMt4HliEn7AXpdldOGcJu1wvJN0dNRBSzl/AQKBgCuz\nfIAKOUCS8InEyfKEg5uDEUslGyKELOz+DJYV1E+ymq0Pi5K8ygI9PPGHYBz09ek/\npQPt8Mbx2BwR0bmXmf2qC98gULarITEbeFv8rWF1D+PGtuc+KcCRZPOQ6Dk2et6j\npor4rQS71lkb997tqpk+IKDAD0WhPm8L6V3Fg8OVAoGAX4HB1BTkCye8WNX4bUiM\n0XfEZ0SszoAOCqo+pFUnpJfaIf6L2/dvtZlaIvsagC21I/s9wYyJ+DhY+AP/rtDy\nFrNfGdRfLXFTWhjwoQbXqCi+R42LUnnw/rQCwVbdBaCOP1c2Lf/wqsEqPOmoT+7p\nn9z+ItWzDK8vNrjs6nRO+sM=\n-----END PRIVATE KEY-----\n",
-  "client_email": "firebase-adminsdk-9n5mx@project-fb5a8.iam.gserviceaccount.com",
-  "client_id": "109592812240455486997",
+  "project_id": "stockmarket-61d33",
+  "private_key_id": "b9ddfd6efe463a57b68586f0b9055ee95cbdfe6f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCrTi/dkEBsQBhL\nu9ZneuElifWXIuILNhoScehXqPbtHb0Ql9SkTlRLjOAi5bQQlQHPOk/4BjkNOse4\nuUqsy4iriMMwxfM703K5FeOeRHu/d0QcWx23K/lAMenuZP0ipbtt3FJEVite8coV\nuYMaoLhhe8A83WJG4gLfDxuTFvx760jtanHXz3P4rEBSKw50Efsn5UIEqU2WEaTl\nuBpP91ajZvxx9p6PXBlTO2S5WwLcp/gHWlaAFaP7GVb0eIxG72gLjVz1MQ7+elx2\nAu2WPOUOCYMbaJ2nFN9nFKW+UYVMBbnf9uYQQ+3PN/Qat8g6UmBreQ0v2Q4TMnIw\nUqy9/iiNAgMBAAECggEAC2PT9+ne9rOeSe7P1yqK7MmK/EUT/YXX3vEW7zkrTeHD\nz+Yge9o/bZSM1JUsT0vxBlvMtGOJiJEndWdQiUOxLyKVQ9ltjkVFY/wKGdxY1Aa0\njyQZyjOQy41mDfVGBXc6ipfzGlsWYCY4dxBSIMOd7tFhG0rm/WqKoVUqUrHdEMoc\neecAQjpGHBu1GxaEicJA6/xiREhn61a9SZaNZ4+sCjXf3PHdZptqWCRLwoTX0HNF\nirU/NywzZEPZUXQoSu59DsAn3e00axeWs3D6i32FuoynrH6hvSoqUkrDNaKtadb3\n+KO8rVQ7aS4h47kSsdoWaXCKhozwWSiy/ISlXoLq8QKBgQDxizZ+58VWjbQY44rw\nBClqknAdfdo6hsvhoZ8XIfc4+mKvkRcrcDTrkui5UtFBJ6O18caAob0dw8odRKNK\nmfy19JaSuv10LGD6jYmC8f1PqevdPtLQCN34rYH4eu3rdAffjHCQdGlhzs3+9aRy\nFty+Kgt9v3gEuh7DpZjBqGueaQKBgQC1jtMIVp0lAOD+hnhtJRp9thMp1WfAgKY4\nvs4UATMas0YJU81sOGWLP1SktsiZTLtKwEGt1euR6L9fceIjNXb/6x/gz8XmS8xB\nvbk/nAyEfxasSTHT237etUeBy3WEQJoFAFLScnhc3EfR9mbD6nxJTrzJJ57CMmM/\nyWdpW0p8hQKBgExkQfT66k+Ie3gPpuZn+o1JCQpavkUaUqrmicEwLdcoYUOzeId1\nclc63D2YcrPPjJhDggs2m/Ao9ugwyBAVCXamh2SanQQ78OPtFZuDWyDx1bXgY54F\n3+YBQgTLJCn+RWsvKH6XQqj7Ve0X1U176459D6tSfevIzWgFHH3K/VZZAoGACUny\nYBXWWmNOH5ePp73jOhVLq7NAaKfsWTDh6EIbdD1B0w5Xjzbfcx1dXkP/xWAYoP1v\nHs64C7IFwINaF4UPvo4wBld6/4pXO/HR/YAlX84EwfHIu9caCZjqvKhFLewENUdL\n9Xpn0BBxGDvsDA/+Jd4CaKQ/Sh4717KdONWz3OUCgYArirfOkUtneGdeNMVRx6Ev\nNnGvU9nqk3GLEKfLjjFuiGXFF7Nj4Tt98odqXsdY/HYg6ecUYDDMnxDtGiavdui0\nq0MOKo11Q28YOKsDryeN6GGvqP3rppia+EantpcC4QO3Qks9tHfB4MuBUHLZJ50A\nYO68vWeqLAA0P7OL1fWPyA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-j9050@stockmarket-61d33.iam.gserviceaccount.com",
+  "client_id": "114547067395647550109",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
   "token_uri": "https://oauth2.googleapis.com/token",
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-9n5mx%40project-fb5a8.iam.gserviceaccount.com",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-j9050%40stockmarket-61d33.iam.gserviceaccount.com",
   "universe_domain": "googleapis.com"
 }
-
 
 cred = credentials.Certificate(firebase_config)
 firebase_admin.initialize_app(cred)
@@ -414,10 +413,8 @@ for index,i in enumerate(newlist):
     
    
     # sharholder
-    try:
-        shares = driver.find_element(By.XPATH, "/html/body/main/section[9]/div[2]/div/table/tbody/tr[7]").find_elements(By.TAG_NAME, "td")
-    except:
-        shares = driver.find_element(By.XPATH, "/html/body/main/section[9]/div[2]/div/table/tbody/tr[6]").find_elements(    By.TAG_NAME, "td")
+    shares = driver.find_element(By.XPATH, "/html/body/main/section[9]/div[2]/div/table/tbody").find_elements(By.TAG_NAME, "tr")[-1].find_elements(By.TAG_NAME,"td")
+
 
     for share in shares[1:]:
         if "," in share.text:
