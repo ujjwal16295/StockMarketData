@@ -418,7 +418,7 @@ for index,i in enumerate(newlist):
     except:
         shares = driver.find_element(By.XPATH, "/html/body/main/section[9]/div[2]/div/table/tbody/tr[6]").find_elements(    By.TAG_NAME, "td")
 
-    for share in shares:
+    for share in shares[1:]:
         if "," in share.text:
             new_share = float(share.text.replace(",",""))
         else:
