@@ -56,7 +56,7 @@ driver = webdriver.Chrome(service=service,options=chr_options)
 
 
 
-
+share_list= []
 newlist=[]
 net_profit_list=[]
 year_list=[]
@@ -410,6 +410,11 @@ for index,i in enumerate(newlist):
     # diff from lowest price
     lowest_diff_percentage=((current_price-lowest_price)/lowest_price)*100
     print(i)
+    
+    # sharholder
+    shares = driver.find_element(By.XPATH,"/html/body/main/section[9]/div[2]/div/table/tbody/tr[7]").find_elements(By.TAG_NAME,"td")
+    for share in shares:
+        share_list.append(share.text)
     # sector and industry
 
     sector= driver.find_element(By.XPATH,"/html/body/main/section[3]/div[1]/div[1]/p[1]/a[1]").text
@@ -471,7 +476,9 @@ for index,i in enumerate(newlist):
         "growthrate":year_profit_list["growth"],
         "sector":sector,
         "industry":industry,
-        "free_cash_flow":free_cash_flow_list
+        "free_cash_flow":free_cash_flow_list,
+        "shares":share_list[-1]
+
     }
 
     if index<=99:
