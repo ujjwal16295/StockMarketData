@@ -532,6 +532,8 @@ for index,i in enumerate(newlist):
     capex_list = []
     cash_from_operating_activity_list = []
     free_cash_flow_list = {}
+    share_list=[]
+
 
 
     driver.get("https://www.screener.in/")
