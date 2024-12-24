@@ -4,7 +4,7 @@ on:
   push:
   pull_request:
   schedule:
-    - cron: '0 10 * * *'  # Runs every day at 10:00 AM UTC, which is 3:30 PM IST
+    - cron: '0 10 * * *'  # Runs every day at 10:00 AM UTC (3:30 PM IST)
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
@@ -30,4 +30,16 @@ jobs:
       run: chmod +x ./chromedriver
 
     - name: Run tests
+      env:
+        AUTH_PROVIDER_X509_CERT_URL: ${{ secrets.AUTH_PROVIDER_X509_CERT_URL }}
+        AUTH_URI: ${{ secrets.AUTH_URI }}
+        CLIENT_EMAIL: ${{ secrets.CLIENT_EMAIL }}
+        CLIENT_ID: ${{ secrets.CLIENT_ID }}
+        CLIENT_X509_CERT_URL: ${{ secrets.CLIENT_X509_CERT_URL }}
+        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+        PRIVATE_KEY_ID: ${{ secrets.PRIVATE_KEY_ID }}
+        PROJECT_ID: ${{ secrets.PROJECT_ID }}
+        TOKEN_URI: ${{ secrets.TOKEN_URI }}
+        TYPE: ${{ secrets.TYPE }}
+        UNIVERSE_DOMAIN: ${{ secrets.UNIVERSE_DOMAIN }}
       run: python main.py
