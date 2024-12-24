@@ -448,18 +448,20 @@ for index,i in enumerate(newlist):
     for capex in capexs[1:]:
         capex_list.append(capex.text)  
     
-    for index,item_of_list in enumerate(capex_list):
-        if "," in cash_from_operating_activity_list[index]:
-            new_cash_op = float(cash_from_operating_activity_list[index].replace(",", ""))
+   
+    for capex_index,item_of_list in enumerate(capex_list):
+        if "," in cash_from_operating_activity_list[capex_index]:
+            new_cash_op = float(cash_from_operating_activity_list[capex_index].replace(",", ""))
         else:
-            new_cash_op = float(cash_from_operating_activity[index])
-        if "," in capex_list[index]:
-            new_capex = float(capex_list[index].replace(",",""))
+            new_cash_op = float(cash_from_operating_activity[capex_index])
+        if "," in capex_list[capex_index]:
+            new_capex = float(capex_list[capex_index].replace(",",""))
         else:
-            new_capex = float(capex_list[index])
+            new_capex = float(capex_list[capex_index])
 
-        free_cash_flow_list[year_fcf_list[index]] = new_cash_op-new_capex
-  
+        free_cash_flow_list[year_fcf_list[capex_index]] = new_cash_op-new_capex
+
+
 
     jsonObject = {
         "name":i,
