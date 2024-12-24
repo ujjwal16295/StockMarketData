@@ -453,7 +453,7 @@ for index,i in enumerate(newlist):
         if "," in cash_from_operating_activity_list[capex_index]:
             new_cash_op = float(cash_from_operating_activity_list[capex_index].replace(",", ""))
         else:
-            new_cash_op = float(cash_from_operating_activity[capex_index])
+            new_cash_op = float(cash_from_operating_activity_list[capex_index])
         if "," in capex_list[capex_index]:
             new_capex = float(capex_list[capex_index].replace(",",""))
         else:
