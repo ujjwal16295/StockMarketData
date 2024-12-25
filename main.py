@@ -58,8 +58,8 @@ driver = webdriver.Chrome(service=service,options=chr_options)
 
 
 
-password="K4k6.s5AHU.mQea"
-email ="ujjwalpatelbarc@gmail.com"
+password=os.getenv("PASSWORD")
+email =os.getenv("EMAIL")
 share_list= []
 newlist=[]
 net_profit_list=[]
