@@ -58,6 +58,8 @@ driver = webdriver.Chrome(service=service,options=chr_options)
 
 
 
+password="K4k6.s5AHU.mQea"
+email ="ujjwalpatelbarc@gmail.com"
 share_list= []
 newlist=[]
 net_profit_list=[]
@@ -167,14 +169,42 @@ for k in range(1,5):
 
 
 
+
 driver.get("https://www.screener.in/")
-search=driver.find_element(By.XPATH,"/html/body/main/div[2]/div/div/div/input")
+login_button = driver.find_element(By.XPATH,"/html/body/nav/div[2]/div/div/div/div[2]/div[2]/a[1]")
+login_button.click()
+email_input= driver.find_element(By.XPATH,"/html/body/main/div[2]/div[2]/form/div[1]/input")
+email_input.send_keys(email)
+password_input =driver.find_element(By.XPATH,"/html/body/main/div[2]/div[2]/form/div[2]/input")
+password_input.send_keys(password)
+submit_button = driver.find_element(By.XPATH,"/html/body/main/div[2]/div[2]/form/button")
+submit_button.click()
+# search=driver.find_element(By.XPATH,"/html/body/main/div[2]/div/div/div/input")
 for index,i in enumerate(newlist):
     print(i)
-    search = driver.find_element(By.XPATH, "/html/body/main/div[2]/div/div/div/input")
+    search = driver.find_element(By.XPATH, "/html/body/nav/div[2]/div/div/div/div[2]/div[1]/div/input")
     search.send_keys(i)
     time.sleep(3)
     search.send_keys(Keys.ENTER)
+    extra_search = driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/div/div/div/input")
+    extra_search.send_keys("Debt to equity")
+    extra_search.send_keys(Keys.ENTER)
+    extra_search = driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/div/div/div/input")
+    extra_search.send_keys("Debt")
+    extra_search.send_keys(Keys.ENTER)
+    
+# debt
+    time.sleep(1)
+    debt=driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/ul/li[11]/span[2]/span").text
+    if "," in debt:
+        new_debt = float(debt.replace(",",""))
+    else:
+        new_debt = float(debt)
+    if driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/ul/li[10]/span[2]/span").text =="":
+        debt_equity_ratio=None
+    else:
+        debt_equity_ratio  = float(driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/ul/li[10]/span[2]/span").text)
+
 
     # getting all csg and cp
     try:
@@ -507,7 +537,9 @@ for index,i in enumerate(newlist):
         "sector":sector,
         "industry":industry,
         "free_cash_flow":free_cash_flow_list,
-        "shares":share_list[-1]
+        "shares":share_list[-1],
+        "debt":debt,
+        "debt_equity_ratio":debt_equity_ratio
 
     }
 
@@ -558,7 +590,7 @@ for index,i in enumerate(newlist):
 
 
 
-    driver.get("https://www.screener.in/")
+    # driver.get("https://www.screener.in/")
     time.sleep(3)
 
 driver.close()
