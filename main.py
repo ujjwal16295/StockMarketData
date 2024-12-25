@@ -69,7 +69,10 @@ count = 1
 year_fcf_list = []
 capex_list = []
 cash_from_operating_activity_list = []
-free_cash_flow_list = {}
+free_cash_flow_list = {
+    "year": [],
+    "list": []
+}
 
 year_net_profit_dict={}
 growth_amount=0.0
@@ -471,7 +474,9 @@ for index,i in enumerate(newlist):
         else:
             new_capex = float(capex_list[capex_index])
 
-        free_cash_flow_list[year_fcf_list[capex_index]] = new_cash_op-new_capex
+                    
+        free_cash_flow_list["year"].append(year_fcf_list[capex_index])
+        free_cash_flow_list["list"].append(new_cash_op-new_capex)
 
 
 
@@ -545,7 +550,10 @@ for index,i in enumerate(newlist):
     year_fcf_list = []
     capex_list = []
     cash_from_operating_activity_list = []
-    free_cash_flow_list = {}
+    free_cash_flow_list = {
+        "year":[],
+        "list":[]
+    }
     share_list=[]
 
 
