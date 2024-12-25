@@ -42,4 +42,6 @@ jobs:
         TOKEN_URI: ${{ secrets.TOKEN_URI }}
         TYPE: ${{ secrets.TYPE }}
         UNIVERSE_DOMAIN: ${{ secrets.UNIVERSE_DOMAIN }}
+        EMAIL: ${{ secrets.EMAIL }}
+        PASSWORD: ${{ secrets.PASSWORD }}
       run: python main.py
