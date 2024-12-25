@@ -192,6 +192,14 @@ for index,i in enumerate(newlist):
     extra_search = driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/div/div/div/input")
     extra_search.send_keys("Debt")
     extra_search.send_keys(Keys.ENTER)
+
+        
+    # mcap
+    mcap = driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/ul/li[1]/span[2]/span").text
+    if "," in mcap:
+        newmcap = float(mcap.replace(",",""))
+    else:
+        newmcap = float(mcap)
     
 # debt
     time.sleep(1)
@@ -539,8 +547,8 @@ for index,i in enumerate(newlist):
         "free_cash_flow":free_cash_flow_list,
         "shares":share_list[-1],
         "debt":debt,
-        "debt_equity_ratio":debt_equity_ratio
-
+        "debt_equity_ratio":debt_equity_ratio,
+        "mcap":newmcap
     }
 
     if index<=99:
