@@ -199,6 +199,15 @@ for index,i in enumerate(newlist):
     extra_search.send_keys("peg ratio")
     extra_search.send_keys(Keys.ENTER)
 
+    
+    # current pe
+    current_pe = driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/ul/li[4]/span[2]/span").text
+    if current_pe == "":
+        new_current_pe = float(0)
+    else:
+        new_current_pe = float(current_pe)
+        
+
     #industry pe
     industry_pe  = float(driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/ul/li[12]/span[2]/span").text)
 
@@ -569,6 +578,8 @@ for index,i in enumerate(newlist):
         "mcap":newmcap,
         "industry_pe":industry_pe,
         "peg_ratio":new_peg_ratio,
+        "current_pe":new_current_pe
+
 
     }
 
