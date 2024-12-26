@@ -192,6 +192,24 @@ for index,i in enumerate(newlist):
     extra_search = driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/div/div/div/input")
     extra_search.send_keys("Debt")
     extra_search.send_keys(Keys.ENTER)
+    extra_search = driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/div/div/div/input")
+    extra_search.send_keys("industry pe")
+    extra_search.send_keys(Keys.ENTER)
+    extra_search = driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/div/div/div/input")
+    extra_search.send_keys("peg ratio")
+    extra_search.send_keys(Keys.ENTER)
+
+    #industry pe
+    industry_pe  = float(driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/ul/li[12]/span[2]/span").text)
+
+    # peg ratio
+    peg_ratio = driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/ul/li[13]/span[2]/span").text
+    if peg_ratio == "":
+        new_peg_ratio = float(0)
+    else:
+        new_peg_ratio = float(peg_ratio)
+
+
 
         
     # mcap
@@ -548,7 +566,10 @@ for index,i in enumerate(newlist):
         "shares":share_list[-1],
         "debt":debt,
         "debt_equity_ratio":debt_equity_ratio,
-        "mcap":newmcap
+        "mcap":newmcap,
+        "industry_pe":industry_pe,
+        "peg_ratio":new_peg_ratio,
+
     }
 
     if index<=99:
