@@ -204,6 +204,8 @@ for index,i in enumerate(newlist):
     current_pe = driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/ul/li[4]/span[2]/span").text
     if current_pe == "":
         new_current_pe = float(0)
+    elif "," in current_pe:
+        new_current_pe = float(current_pe.replace(",",""))  
     else:
         new_current_pe = float(current_pe)
         
