@@ -200,6 +200,13 @@ for index,i in enumerate(newlist):
     extra_search.send_keys(Keys.ENTER)
 
     
+    #div yield
+    div_yield_span = driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/ul/li[6]/span[2]/span")
+    if div_yield_span.text == "":
+        div_yield = float(0)
+    else:
+        div_yield=float(div_yield_span.text)
+
     # current pe
     current_pe = driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/ul/li[4]/span[2]/span").text
     if current_pe == "":
@@ -580,7 +587,9 @@ for index,i in enumerate(newlist):
         "mcap":newmcap,
         "industry_pe":industry_pe,
         "peg_ratio":new_peg_ratio,
-        "current_pe":new_current_pe
+        "current_pe":new_current_pe,
+        "div_yield":div_yield,
+
 
 
     }
