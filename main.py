@@ -186,7 +186,7 @@ submit_button = driver.find_element(By.XPATH,"/html/body/main/div[2]/div[2]/form
 submit_button.click()
 time.sleep(2)
 # search=driver.find_element(By.XPATH,"/html/body/main/div[2]/div/div/div/input")
-for index,i in enumerate(newlist[157:len(newlist)]):  
+for index,i in enumerate(newlist):  
     print(i)
     search = driver.find_element(By.XPATH, "/html/body/nav/div[2]/div/div/div/div[2]/div[1]/div/input")
     search.send_keys(i)
