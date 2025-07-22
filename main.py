@@ -143,6 +143,7 @@ for k in range(1,5):
     for item in stock_list:
         print(item.text)
         newlist.append(str(item.text))
+    time.sleep(2)
 
 
 
@@ -155,6 +156,7 @@ for k in range(1,5):
     for item in stock_list:
         # print(item.text)
         newlist.append(str(item.text))
+    time.sleep(2)
 
 # smallcap
 for k in range(1,5):
@@ -163,6 +165,7 @@ for k in range(1,5):
     for item in stock_list:
         # print(item.text)
         newlist.append(str(item.text))
+    time.sleep(2)
 
 
 
@@ -175,12 +178,15 @@ login_button = driver.find_element(By.XPATH,"/html/body/nav/div[2]/div/div/div/d
 login_button.click()
 email_input= driver.find_element(By.XPATH,"/html/body/main/div[2]/div[2]/form/div[1]/input")
 email_input.send_keys(email)
+time.sleep(2)
 password_input =driver.find_element(By.XPATH,"/html/body/main/div[2]/div[2]/form/div[2]/input")
 password_input.send_keys(password)
+time.sleep(2)
 submit_button = driver.find_element(By.XPATH,"/html/body/main/div[2]/div[2]/form/button")
 submit_button.click()
+time.sleep(2)
 # search=driver.find_element(By.XPATH,"/html/body/main/div[2]/div/div/div/input")
-for index,i in enumerate(newlist):
+for index,i in enumerate(newlist):  
     print(i)
     search = driver.find_element(By.XPATH, "/html/body/nav/div[2]/div/div/div/div[2]/div[1]/div/input")
     search.send_keys(i)
@@ -189,15 +195,19 @@ for index,i in enumerate(newlist):
     extra_search = driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/div/div/div/input")
     extra_search.send_keys("Debt to equity")
     extra_search.send_keys(Keys.ENTER)
+    time.sleep(2)
     extra_search = driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/div/div/div/input")
     extra_search.send_keys("Debt")
     extra_search.send_keys(Keys.ENTER)
+    time.sleep(2)
     extra_search = driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/div/div/div/input")
     extra_search.send_keys("industry pe")
     extra_search.send_keys(Keys.ENTER)
+    time.sleep(2)
     extra_search = driver.find_element(By.XPATH,"/html/body/main/div[3]/div[3]/div[2]/div/div/div/input")
     extra_search.send_keys("peg ratio")
     extra_search.send_keys(Keys.ENTER)
+    time.sleep(2)
 
     
     #div yield
@@ -327,10 +337,10 @@ for index,i in enumerate(newlist):
            cp3=0
 
     # median pe ratio
-    time.sleep(1)
+    time.sleep(3)
     pe_ratio_button=driver.find_element(By.XPATH,"/html/body/main/section[1]/div[1]/div[2]/div/button[2]")
     pe_ratio_button.click()
-    time.sleep(1)
+    time.sleep(3)
     median_pe = driver.find_element(By.XPATH,"/html/body/main/section[1]/div[3]/label[2]/span").text
     if((median_pe.replace('Median PE =', '')).replace(" ", "")!="None"):
         median_pe_val=float((median_pe.replace('Median PE =', '')).replace(" ", ""))
@@ -511,9 +521,9 @@ for index,i in enumerate(newlist):
     # free cash flow
     cash_from_operating_activity_button = driver.find_element(By.XPATH,"/html/body/main/section[7]/div[2]/table/tbody/tr[1]/td[1]/button")
     cash_from_investing_activity_button=driver.find_element(By.XPATH,"/html/body/main/section[7]/div[2]/table/tbody/tr[2]/td[1]/button")
-
+    time.sleep(2)
     cash_from_investing_activity_button.click()
-    time.sleep(1)
+    time.sleep(2)
     year_fcf = driver.find_element(By.XPATH,"/html/body/main/section[7]/div[2]/table/thead/tr").find_elements(By.TAG_NAME,"th")
     for fcf in year_fcf[1:]:
         year_fcf_list.append(fcf.text)
